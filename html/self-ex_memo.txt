@@ -1,0 +1,27 @@
+プリントページ参考サイト
+https://www.tsukimi.net/jquery_specific-range_printing.html
+
+レイアウト参考サイト
+１　https://www.fotojet.com/jp/apps/?entry=design&category=card
+２　https://www.canva.com/design/DAD3omlhcoY/rvDlXOuAAhLc0IsNzbPanA/edit?category=tACFajEYUAM
+
+レイアウトデザイン　ダッシュボード
+https://dribbble.com/shots/2205322-Health-Dashboard
+
+テーブル設計
+・検索機能：カテゴリーに病名と部位で分類
+・履歴を表示できるように。あとで
+・ランキング機能。あとで
+
+jsPDF参考サイト
+https://qiita.com/oigus-k/items/9a1f6b3931f4acda5a51
+
+テーブル設計
+item_id(AI/主キー), item_name, creator, caption, img, status, createdata, updatedate
+item_id, category
+item_id, template
+
+残り機能
+・CSSをメニュー数に合わせて調整する
+・検索機能の拡張
+・メニューを増やす

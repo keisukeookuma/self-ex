@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+ <html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script> 
+    <!-- <script src="js/html2canvas.js"></script> -->
+    <script src="create_image.js"></script>
+    <!-- <script src="js/jspdf.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="test">
+		<h1>testtest</h1>
+	</div>
+    <div id = "test1" style="background-color:white">
+		うゐのおくやまけふこえてあさきゆめみしゑひもせす<br>
+		<input type="button" value="PDFダウンロード" onclick="test1()" class="btn btn-success" /><br>
+		<img id = "img1" src="./../img/9c8c1774ea85ef4bae4fbd6c4af968e1_s.jpg"><br>
+    </div>
+    <iframe id="renderSpace" frameborder="0" width="450" height="450"></iframe>
+<script>
+function test1(){
+		// コンテンツ化を画像化します。
+		html2canvas(document.getElementById("test1"), {
+	        onrendered: function (canvas) {
+	        	// コンテンツの画像化が完了したら以下の処理を行います。
+	        	
+	        	// コンテンツの画像データを取得します。
+	            var dataURI = canvas.toDataURL("image/jpeg");
+	            
+	            // ｊｓPDFを生成し、画像データを渡します。
+	            var pdf = new jsPDF();
+	            pdf.addImage(dataURI, 'JPEG', 0, 0);
+	            
+	            // とりこんだ画像データからレンダリングデータを作成し、PDFプレビュー画面を表示します。
+	            var renderString = pdf.output("datauristring");
+	            $("iframe").attr("src", renderString);
+	        }
+	    });   
+	}
+	
+</script>
+</body>
+</html>

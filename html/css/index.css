@@ -1,0 +1,371 @@
+body {
+    font-size: .875rem;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  .feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+  }
+  
+  /*
+   * Sidebar
+   */
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 48px 0 0; /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+  
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+      position: -webkit-sticky;
+      position: sticky;
+    }
+  }
+  
+  .sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+  }
+  
+  .sidebar .nav-link.active {
+    color: #007bff;
+  }
+  
+  .sidebar .nav-link:hover .feather,
+  .sidebar .nav-link.active .feather {
+    color: inherit;
+  }
+  
+  .sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+  }
+  
+  
+  /*
+   * Navbar
+   */
+  
+  .navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(20,20,31,.12);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  }
+  
+  .navbar-brand a{
+    color: #fff;
+  }
+
+  
+
+  .navbar-nav select {
+    height: 36px;
+  }
+
+  .navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+  }
+  
+  .form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+  }
+  
+  .form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+    background-color: #354053;
+  }
+
+  .form-bg {
+    background-color: #354053;
+  }
+
+/* 追加 */
+  .height-38 {
+    height: 38px;
+    width: 130px;
+  }
+  #preview {
+    /* background-image: url(../img/back.jpg); */
+    background-size: contain;
+    background-color: white;
+    color: black;
+    height: 715px;
+    width: 525px;
+    min-width: 500px;
+    box-shadow: 0 0 8px gray;
+    font-size: 20px;
+  }
+
+  nav {
+    background-color: #346cb0;
+    height: 50px;
+  }
+
+  nav-side {
+    background: #354053;
+  }
+
+  nav-side a{
+    color: #8391a2;
+  }
+
+  nav-side p {
+    font-size: 12px;
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: #354053;
+  }
+
+  .item-sample:hover{
+    box-shadow: 0 0 4px gray;
+  }
+
+  .item-sample p{
+    color: black;
+  }
+
+  .item-sample a {
+    text-decoration: none;
+  }
+
+  .nav-a-size {
+    height: 75px;
+    width: 80px;
+    display: block;
+  }
+
+  .sample-caption h2{
+    font-size: medium;
+  }
+
+  main {
+    background-color: #f6f7f9;
+  }
+  .print-preview {
+    display: none;
+    color: black;
+  }
+ 
+  .search{
+    width: 90%;
+  }
+
+  .nav_sample_img img{
+    width :120px;
+    height: 90px;
+  }
+
+#all_show_result {
+  list-style: none;
+  padding-left: 5px;
+}
+
+.item {
+ position: relative;
+ padding-top: 5px;
+}
+
+.template {
+  list-style: none;
+}
+
+.template a{
+  color: black;
+  text-decoration: none;
+}
+
+.template:hover{
+  box-shadow: 0 0 4px gray;
+}
+
+.preview-btn{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  border: none;
+  color: gray;
+}
+
+.position-top-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 14px;
+  margin: 12px;
+  text-decoration: underline
+}
+
+#preview h1{
+  font-size: 30px;
+}
+
+.contents3 img{
+  max-width: 226px;
+  max-height: 170px;
+}
+
+.contents2 img{
+  max-width: 250px;
+  max-height: 190px;
+}
+
+.contents2 p{
+  font-size: 22px;
+}
+
+.contents2 ol{
+  font-size: 16px;  
+}
+
+.contents1 img{
+  max-width: 400px;
+  max-height: 300px;
+}
+
+.contents1 p{
+  font-size: 25px;
+}
+
+.contents1 ol{
+  font-size: 21px;
+}
+
+.preview-caption {
+  font-size: 14px;
+}
+
+pre {
+    /* CSS3 */
+  white-space: pre-wrap;
+  border: none;
+}
+  
+
+  @media print{ 
+    .noprint {
+      display: none;
+    }
+
+    .print-preview{
+      display: block;
+      background-size: cover;
+      width: 340mm;
+      height: 490mm;
+      padding: 10mm 10mm;
+    }
+
+    .print-preview h1{
+      font-size: 80px;
+      padding: 10px;
+    }
+
+    .print-preview .contents3 img{
+      max-width: 600px;
+      max-height: 450px;
+    }
+
+    .print-preview .contents3 p{
+      font-size: 50px;
+      padding-top: 20px;
+      padding-bottom: 0px;
+    }
+    .print-preview .contents3 ol{
+      font-size: 38px; 
+      padding-left: 80px;
+    }
+
+    .print-preview .contents3 .position-top-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 40px !important;
+      margin: 20px 0 ;
+    }
+
+    .print-preview .contents2 img{
+      margin: 0;
+      max-width: 700px;
+      max-height: 525px;
+    }
+
+    .print-preview .contents2 p{
+      font-size: 60px;
+      padding-top: 20px;
+      padding-bottom: 0px;
+    }
+    .print-preview .contents2 ol{
+      font-size: 41px; 
+      padding-left: 80px;
+    }
+
+    /* .preview-caption ol{
+      padding-left: 80px;
+    } */
+
+    .print-preview .contents2 .position-top-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 45px !important;
+      margin: 55px 0 ;
+      /* text-decoration: underline */
+    }
+
+    .print-preview .contents1 img{
+      margin-top: 45px;
+      max-width: 18000px;
+      max-height: 15000px;
+    }
+
+    .print-preview .contents1 p{
+      font-size: 70px;
+      padding-top: 80px;
+      padding-bottom: 0px;
+    }
+
+    .print-preview .contents1 ol{
+      font-size: 54px; 
+      padding-left: 90px;
+      margin-top: 20px;
+    }
+
+    .print-preview .contents1 .position-top-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 46px !important;
+      margin: 85px 0 ;
+      /* text-decoration: underline */
+    }
+  }

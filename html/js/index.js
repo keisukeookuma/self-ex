@@ -87,8 +87,6 @@ $(function(){
 
           if($("#preview").find("div.item").length < contentsCount){
             $("#preview").append(item);
-          }else{
-            alert('メニュー数を超えています。')
           }
         })
       },
@@ -142,9 +140,7 @@ $(function(){
 
           if($("#preview").find("div.item").length < contentsCount){
           $("#preview").append(item);
-          }else{
-            alert('メニュー数を超えています。')
-          } 
+          }
         }
       },
       error: function(){

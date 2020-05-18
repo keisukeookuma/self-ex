@@ -80,7 +80,7 @@
                     <div class="search mx-auto">
                         <input class="search-form form-control form-control-dark  text-light form-bg" type="text" placeholder="部位や病名で検索可能！" aria-label="検索">
                     </div>
-                    <div class="overflow-auto" style="width:100%; height: 86vh;">
+                    <div class="overflow-auto" style="width:100%; height: 85vh;">
                     <!-- <div class="overflow-auto" style="width:100%; height: 620px;"> -->
                         <ul id="all_show_result" class="d-flex flex-wrap justify-content-around"></ul>
                     </div>
@@ -120,7 +120,7 @@
             </div>
         </div>
         <main role="main" class="col-md-7 ml-sm-auto pt-2 px-0 ">
-            <div class="overflow-auto" style="width:100%; height: 92vh;">
+            <div class="overflow-auto" style="width:100%; height: 91vh;">
             <!-- <div class="overflow-auto" style="width:100%; height: 662vh;"> -->
                 <div class="container a">
                     <div class="tab-content p-3 d-flex justify-content-center">

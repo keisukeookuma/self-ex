@@ -133,6 +133,7 @@ try {
   $error[] = '予期せぬエラーが発生しました。管理者へお問い合わせください。'.$e->getMessage();
 }
 print error_display($error);
+var_dump($_SERVER['SERVER_ADDR'] );
 ?>
 <!DOCTYPE html>
 <html lang="ja">

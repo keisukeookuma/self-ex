@@ -137,7 +137,7 @@ print error_display($error);
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <title>Photo Shop</title>
+    <title>自主トレメニュー</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/tool.css">
 </head>

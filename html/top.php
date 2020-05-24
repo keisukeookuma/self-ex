@@ -37,7 +37,7 @@
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
-        <h1 class="masthead-heading mb-0">リハビリメニュー作成！</h1>
+        <h1 class="masthead-heading mb-0">リハメニュー</h1>
         <h2 class="masthead-subheading mb-0">一人一人にオリジナルの自主トレ用紙を作ろう！</h2>
         <a href="index.php" class="btn btn-primary btn-xl rounded-pill mt-5">作成開始</a>
       </div>

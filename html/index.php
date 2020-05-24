@@ -133,7 +133,7 @@
         </main>
     </div>
 </div>
-<div class="print-preview selector"></div>
+<div class="print-preview"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>

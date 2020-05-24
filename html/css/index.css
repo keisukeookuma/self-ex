@@ -217,7 +217,7 @@ body {
   color: gray;
 }
 
-.position-top-right {
+#preview .position-top-right {
   position: absolute;
   right: 0;
   top: 0;
@@ -235,33 +235,33 @@ body {
   max-height: 170px;
 }
 
-.contents2 img{
+#preview .contents2 img{
   max-width: 250px;
   max-height: 190px;
 }
 
-.contents2 p{
+#preview .contents2 p{
   font-size: 22px;
 }
 
-.contents2 ol{
+#preview .contents2 ol{
   font-size: 16px;  
 }
 
-.contents1 img{
+#preview .contents1 img{
   max-width: 400px;
   max-height: 300px;
 }
 
-.contents1 p{
+#preview .contents1 p{
   font-size: 25px;
 }
 
-.contents1 ol{
+#preview .contents1 ol{
   font-size: 21px;
 }
 
-.preview-caption {
+#preview .preview-caption {
   font-size: 14px;
 }
 
@@ -272,11 +272,11 @@ pre {
 }
   
 
-  /* @media print{   
+  @media print{   
     .noprint {
       display: none;
     }
-     */
+    
     .print-preview{
       display: block;
       background-size: cover;
@@ -309,8 +309,9 @@ pre {
       position: absolute;
       right: 0;
       top: 0;
-      font-size: 40px !important;
+      font-size: 40px;
       margin: 20px 0 ;
+      text-decoration: underline;
     }
 
     .print-preview .contents2 img{
@@ -337,15 +338,15 @@ pre {
       position: absolute;
       right: 0;
       top: 0;
-      font-size: 45px !important;
+      font-size: 45px;
       margin: 55px 0 ;
-      /* text-decoration: underline */
+      text-decoration: underline;
     }
 
     .print-preview .contents1 img{
       margin-top: 45px;
-      max-width: 18000px;
-      max-height: 15000px;
+      max-width: 1000px;
+      max-height: 750px;
     }
 
     .print-preview .contents1 p{
@@ -366,19 +367,33 @@ pre {
       top: 0;
       font-size: 46px !important;
       margin: 85px 0 ;
-      /* text-decoration: underline */
+      text-decoration: underline
     }
 
-    _:-ms-lang(x),.print-preview{
+    _:-ms-lang(x), .print-preview{
+      display: block;
+      background-size: cover;
+      width: 290mm!important;
+      height: 430mm!important;
+      padding: 0mm 10mm!important;
+    }
+
+    /* safari用に検討するもchromeで右側にスペースができるため保留 */
+    /* _:lang(x)::-webkit-,.print-preview{
       display: block;
       background-size: cover;
       width: 290mm!important;
       height: 440mm!important;
       padding: 0mm 10mm!important;
-    }
+    } */
 
      _:-ms-lang(x), .selector {
       background-color: lightslategray;
+    }
+    
+    _:-ms-lang(x),.print-preview h1{
+      font-size: 70px!important;
+      padding: 0px!important;
     }
 
     _:-ms-lang(x),.print-preview .contents3 p{
@@ -387,16 +402,11 @@ pre {
       padding-bottom: 0px;
     }
 
-    _:-ms-lang(x),.selector ol{
+    _:-ms-lang(x),.print-preview .contents3 ol{
       font-size: 32px!important; 
       padding-left: 70px!important;
       margin-top: 15px!important;
     } 
-    
-    _:-ms-lang(x),.print-preview h1{
-      font-size: 70px!important;
-      padding: 0px!important;
-    }
 
     _:-ms-lang(x),.print-preview .contents3 img{
       max-width: 560px!important;
@@ -410,5 +420,34 @@ pre {
       font-size: 35px !important;
       margin: 20px 0 ;
     }
-  /* } */
-/* } */
+
+    _:-ms-lang(x),.print-preview .contents2 p{
+      font-size: 50px!important;
+      padding-top: 10px!important;
+      padding-bottom: 0px;
+    }
+
+    _:-ms-lang(x),.print-preview .contents2 img{
+      max-width: 634px!important;
+      max-height: 475px!important;
+    }
+
+    _:-ms-lang(x),.print-preview .contents2 ol{
+      font-size: 34px!important; 
+      padding-left: 70px!important;
+      margin-top: 15px!important;
+    } 
+
+    _:-ms-lang(x),.print-preview .contents2 .position-top-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 35px !important;
+      margin: 35px 0 ;
+    }
+
+    _:-ms-lang(x),.print-preview .contents1 ol{
+      font-size: 45px!important; 
+    } 
+  } 
+

@@ -18,7 +18,7 @@ function navSampleList(data_item_name, data_img, data_caption){
 function makeItemName(itemSample){
     var sampleItemName = $('<div>');
     sampleItemName.addClass('item_name text-center');
-    sampleItemName.append("<u><p class='position-top-right' contentEditable='true'>　回　セット</p></u>");
+    sampleItemName.append("<p class='position-top-right' contentEditable='true'>　回　セット</p>");
     sampleItemName.append(itemSample);
     return sampleItemName;
 }
@@ -47,7 +47,7 @@ function makeDeleteButton(item) {
     });
     return sampleButton;
 }  
-//*
+
 function makeItem(itemName, itemCaption, itemImg){
     var sampleItem = $("<div>");
     sampleItem.addClass("item");

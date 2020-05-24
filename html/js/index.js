@@ -7,17 +7,17 @@ $(function(){
     $('.print-preview').append($('#preview').html());
     window.print();
 
-    // if(contentsCount === 3){
-    //   $('div.item').addClass('contents3');
-    //   hide_elm.removeClass('print');
-    // }else if(contentsCount === 2){
-    //   $('div.item').addClass('contents2');
-    //   hide_elm.removeClass('print');
-    // }else if(contentsCount === 1){
-    //   $('div.item').addClass('contents1');
-    //   hide_elm.removeClass('print');
-    // }
-    // $('.print-preview').children().remove();
+    if(contentsCount === 3){
+      $('div.item').addClass('contents3');
+      hide_elm.removeClass('print');
+    }else if(contentsCount === 2){
+      $('div.item').addClass('contents2');
+      hide_elm.removeClass('print');
+    }else if(contentsCount === 1){
+      $('div.item').addClass('contents1');
+      hide_elm.removeClass('print');
+    }
+    $('.print-preview').children().remove();
   });
 
   var contentsCount = 3;
@@ -77,7 +77,7 @@ $(function(){
             item.find(".item-caption").addClass("col-5");
           }else if(contentsCount === 2){
             item.addClass("contents2");
-            item.find(".position-top-right").css({"top": "20px","font-size":"17px"});
+            //item.find(".position-top-right").css({"top": "20px","font-size":"17px"});
             item.find(".item-img").addClass("mt-3");
           }else if(contentsCount === 1){
             item.addClass("contents1 mt-5");

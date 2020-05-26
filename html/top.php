@@ -17,7 +17,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">リハビリメニュー作成</a>
+      <a class="navbar-brand text-capitalize" href="#">Reha Menu</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,7 +37,7 @@
   <header class="masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
-        <h1 class="masthead-heading mb-0">リハメニュー</h1>
+        <h1 class="masthead-heading mb-0">Reha Menu</h1>
         <h2 class="masthead-subheading mb-0">一人一人にオリジナルの自主トレ用紙を作ろう！</h2>
         <a href="index.php" class="btn btn-primary btn-xl rounded-pill mt-5">作成開始</a>
       </div>

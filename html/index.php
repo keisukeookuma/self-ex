@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow navbar-expand">
   <div class="col-md-5 navbar-brand">
-    <a class="mr-0" href="top.php">リハビリメニュー作成！</a>
+    <a class="mr-0 " href="top.php">Reha Menu</a>
   </div>
   <div class="col-md-7">
     <ul class="navbar-nav px-3">

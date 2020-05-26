@@ -387,9 +387,6 @@ pre {
       padding: 0mm 10mm!important;
     } */
 
-     _:-ms-lang(x), .selector {
-      background-color: lightslategray;
-    }
     
     _:-ms-lang(x),.print-preview h1{
       font-size: 70px!important;

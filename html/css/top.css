@@ -53,7 +53,9 @@ header.masthead{
     overflow:hidden;
     padding-top:calc(7rem + 72px);
     padding-bottom:7rem;
-    background-color: #346cb0;
+    background-image: url("../img/9c8c1774ea85ef4bae4fbd6c4af968e1_s.jpg");
+        /* "./9c8c1774ea85ef4bae4fbd6c4af968e1_s.jpg"); */
+    /* background-color: #346cb0; */
     /* background:linear-gradient(0deg,#ff6a00 0,#ee0979 100%); */
     background-repeat:no-repeat;
     background-position:center center;
@@ -71,7 +73,7 @@ header.masthead .masthead-content .masthead-heading{
 }
 
 header.masthead .masthead-content .masthead-subheading{
-    font-size:2rem
+    font-size:3rem
 }
 
 /* header.masthead {

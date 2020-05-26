@@ -22,9 +22,9 @@
                 <li><a id="choice-contents-3" class="nav-link active" data-toggle="pill" href="#" role="tab">3</a></li>
             </ul>
         </li>
-        <li>
+        <!-- <li>
             <a class="nav-link ml-3 text-nowrap" href="#">ダウンロード</a>
-        </li>
+        </li> -->
         <li>
             <a class="nav-link ml-3" href="#" id="print">印刷</a>
         </li>

@@ -67,10 +67,13 @@
                     </svg>
                     <p>ご意見箱</p>
                 </a>
-                <a class="nav-link nav-a-size px-0 text-center pt-4 m-auto" data-toggle="pill" href="v" role="tab" aria-controls="v" aria-selected="false">
-                    <svg class="bi bi-gear-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 01-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 01.872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 012.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 012.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 01.872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 01-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 01-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 100-5.86 2.929 2.929 0 000 5.858z" clip-rule="evenodd"/>
+                <a class="nav-link nav-a-size px-0 text-center pt-4 m-auto" href="manual.php">
+                    <svg class="bi bi-info-square" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                        <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+                    <circle cx="8" cy="4.5" r="1"/>
                     </svg>
+                    <p>使い方ガイド</p>
                 </a>
             </div>
         </nav-side>
@@ -99,9 +102,9 @@
                         <li class="nav-item template">
                             <a class="nav-link" href="#">変形性膝関節症</a>
                         </li>
-                        <li class="nav-item template">
+                        <!-- <li class="nav-item template">
                             <a class="nav-link" href="#">肩関節周囲炎</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="tab-pane fade" id="v-pills-sample2" role="tabpanel" aria-labelledby="v-pills-sample3-tab">
@@ -114,6 +117,9 @@
                         </li>
                         <li class="nav-item template">
                             <a class="nav-link" href="#">立ってできる体操</a>
+                        </li>
+                        <li class="nav-item template">
+                            <a class="nav-link" href="#">ベッドでできる体操</a>
                         </li>
                     </ul>
                 </div>

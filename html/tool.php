@@ -158,6 +158,7 @@ var_dump($_SERVER['SERVER_ADDR'] );
                 <input type="checkbox" name="category[]" value="腰部">腰部
                 <input type="checkbox" name="category[]" value="股関節">股関節
                 <input type="checkbox" name="category[]" value="膝関節">膝関節
+                <input type="checkbox" name="category[]" value="足部">足部
                 <br>
                 病名<br>
                 <input type="checkbox" name="category[]" value="肩関節周囲炎">肩関節周囲炎
@@ -169,14 +170,14 @@ var_dump($_SERVER['SERVER_ADDR'] );
                 介護部門<br>
                 <input type="checkbox" name="category[]" value="立位での体操">立位での体操
                 <input type="checkbox" name="category[]" value="座位での体操">座位での体操
-                <input type="checkbox" name="category[]" value="臥位での体操">臥位での体操
+                <input type="checkbox" name="category[]" value="ベッドでの体操">ベッドでの体操
                 <input type="checkbox" name="category[]" value="セラバンド体操">セラバンド体操
                 <input type="checkbox" name="category[]" value="棒体操">棒体操
             </p>
             <p>テンプレート設定<input type="text" name="template_name"></p>
             <select name="status">
-                <option value="0">非公開</option>
-                <option value="1">公開</option>
+                <option value="0">公開</option>
+                <option value="1">非公開</option>
             </select>
             <p><input type="file" name="file" value="ファイルを選択"></p>
             <p><input type="submit" value="■□■□■商品を追加■□■□■"></p>

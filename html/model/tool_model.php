@@ -199,7 +199,7 @@ function db_detail_change($dbh, $img, $status, $item_id, $item_name, $creator, $
 
 function destroy_item($dbh, $item_id, $deletefiles, $imgdir){
     $dbh->beginTransaction();
-    if(delete_item($dbh, $item_id)
+    if(delete_item($dbh, $item_id) && delete_categories($dbh, $item_id)
       && delete_image($deletefiles, $imgdir)){
       $dbh->commit();
       return true;
@@ -215,6 +215,17 @@ function delete_item($dbh, $item_id){
       WHERE
         item_id = :item_id
       LIMIT 1
+    ";
+    
+    return execute_query($dbh, $sql, array('item_id'=>$item_id));
+}
+
+function delete_categories($dbh, $item_id){
+    $sql = "
+      DELETE FROM
+        categories
+      WHERE
+        item_id = :item_id
     ";
     
     return execute_query($dbh, $sql, array('item_id'=>$item_id));

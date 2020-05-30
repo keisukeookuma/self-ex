@@ -6,7 +6,7 @@ define('DB_NAME', 'self-ex'); // MySQLのDB名(このコースではMySQLのユ�
 define('DB_CHARSET', 'SET NAMES utf8');  // MySQLのcharset
 if($_SERVER['SERVER_ADDR'] === '118.27.4.157'){
     $host = 'localhost';
-}elseif($_SERVER['SERVER_ADDR'] === '172.18.0.3'){
+}elseif($_SERVER['SERVER_ADDR'] === '172.18.0.4'){
     $host = 'mysql';
 }
 // define('DSN', 'mysql:dbname='.DB_NAME.';host='.print $host.';port=3306;charset=utf8');

@@ -90,7 +90,7 @@ function get_items($dbh, $search_word){
     return fetch_all_query($dbh, $sql, array('%'. $search_word .'%','%'. $search_word .'%','%'. $search_word .'%'));
 }
 
-function sample_items_search($dbh, $search_sql, $search_words){
+function sample_items_search($dbh, $search_sql,  $search_words){
     $where = 'WHERE status = 0 && (';
     $where.= implode("OR", $search_sql);
     $sql = "
@@ -109,15 +109,17 @@ function sample_items_search($dbh, $search_sql, $search_words){
             items.item_id = categories.item_id
     ";
     $sql.= $where;
-    $sql.='
+    $sql.="
         )
         GROUP BY 
             items.item_id
         ORDER BY
             items.item_id DESC
-        ';
+        LIMIT 
+            ?,10
+        ";
         
-    return fetch_all_query($dbh, $sql, $search_words);
+    return fetch_all_query($dbh, $sql,  $search_words);
 }
 
 function get_all_items($dbh){

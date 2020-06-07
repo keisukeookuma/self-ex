@@ -86,6 +86,7 @@
                     <div class="overflow-auto" style="width:100%; height: 85vh;">
                     <!-- <div class="overflow-auto" style="width:100%; height: 620px;"> -->
                         <ul id="all_show_result" class="d-flex flex-wrap justify-content-around"></ul>
+                        <div class="view_more text-center mb-1"><button class='btn'>もっと見る</button></div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="v-pills-sample1" role="tabpanel" aria-labelledby="v-pills-sample1-tab">

@@ -33,22 +33,37 @@ $(function(){
     $('.item').remove();
     contentsCount = 3; 
   });
-
+  var offset = 0;
   $('.search-form').change(function(){
+    offset = 0;
     $('#all_show_result').children().remove();
-    getAllData($(this).val());
+    getAllData($(this).val(), offset);
+  });
+  
+  //view moreの追加
+  $('.view_more').click(function(){
+    console.log($(".item-sample").length)
+    offset = $(".item-sample").length;
+    var searchWord = $('.search-form').val();
+    getAllData(searchWord, offset);
   });
 
-  getAllData('');
+  getAllData('',offset);
+
   $('.template').on('click',function(){
     var templateSearch = $(this).children().html();
     getTemplateData(templateSearch);
   });
+
+  
   //ajax
-  function getAllData(search_word){
+  function getAllData(search_word, offset){
     $.ajax({
       url:"ajax_show_all.php",
-      data:{search_word : search_word},
+      data:{
+        search_word : search_word,
+        offset : offset
+      },
       type:'POST',
       datatype:'json',
       success: function(data){
@@ -56,7 +71,8 @@ $(function(){
           var sampleList = navSampleList(data[i].item_name, data[i].img, data[i].caption);
           $('#all_show_result').append(sampleList);
         }
-        $(".item-sample").click(function(){
+
+        $(".item-sample").off().click(function(){
           var itemName = makeItemName($(this).find('.item_name').html());
           var itemCaption = makeItemCaption($(this).find('.item_caption').html());
           var itemImg = makeItemImg($(this).find('.nav_sample_img').html());

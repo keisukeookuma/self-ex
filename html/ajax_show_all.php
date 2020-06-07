@@ -16,19 +16,14 @@ $template_word = '';
 $dbh = get_db_connect();
 
 if(isset($_POST['search_word'])=== true){
-    // $search_word = expload(" ",$_POST['search_word']);
-    // $search_word_condition = [];
-    // foreach($search_word as $value){
-    //     $search_word_condition[] = 'items.item_name LIKE "%' .$value.'%"';
-    // }
-    // $search_word_condition = implode(' AND ', $search_word_condition);
-    // $sample = sample_items_search($dbh, $search_word_condition);
-    
     $search_word = "";
     $data = [];
     $search_array = [];
     $search_string = '';
+    $offset = '';
     $search_word = $_POST['search_word'];
+    $offset = $_POST['offset'];
+
     $search_word = str_replace("　"," ",$search_word);
     $search_array = explode(" ", $search_word);
     $search_words = [];
@@ -39,7 +34,8 @@ if(isset($_POST['search_word'])=== true){
         $search_words[] = '%'.$value.'%';
         $search_words[] = '%'.$value.'%';
     }
-    $sample = sample_items_search($dbh, $search_sql, $search_words);
+    $search_words[] = $offset;
+    $sample = sample_items_search($dbh, $search_sql,  $search_words);
     // $search_word = $_POST['search_word'];
     // $sample = get_items($dbh, $search_word);
 }elseif(isset($_POST['template_word'])=== true){

@@ -72,8 +72,13 @@ body {
     padding-top: .75rem;
     padding-bottom: .75rem;
     font-size: 1rem;
-    background-color: rgba(20,20,31,.12);
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  }
+
+  @media (min-width: 670px) {
+    .navbar-brand{
+      background-color: rgba(20,20,31,.12);
+      box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+    }
   }
   
   .navbar-brand a{
@@ -113,18 +118,7 @@ body {
     height: 38px;
     width: 130px;
   }
-  #preview {
-    /* background-image: url(../img/back.jpg); */
-    background-size: contain;
-    background-color: white;
-    color: black;
-    height: 715px;
-    width: 525px;
-    min-width: 500px;
-    box-shadow: 0 0 8px gray;
-    font-size: 20px;
-  }
-
+  
   nav {
     background-color: #346cb0;
     height: 50px;
@@ -217,6 +211,30 @@ body {
   color: gray;
 }
 
+#preview {
+  /* background-image: url(../img/back.jpg); */
+  background-size: contain;
+  background-color: white;
+  color: black;
+  height: 715px;
+  width: 525px;
+  min-width: 525px;
+  box-shadow: 0 0 8px gray;
+  font-size: 20px;
+  padding: 1.5rem;
+}
+
+/* スマホとタブレットは同じサイズ */
+@media (max-width: 1000px){
+  #preview{
+    height: 492px;
+    width: 352px;
+    min-width: 352px;
+    padding: 0.25rem;
+  }
+}
+
+
 #preview .position-top-right {
   position: absolute;
   right: 0;
@@ -245,7 +263,15 @@ body {
 }
 
 #preview .contents2 ol{
-  font-size: 16px;  
+  font-size: 14px;  
+}
+
+#preview .contents2 ol{
+  padding-left: 50px;
+}
+
+#preview .contents1 {
+  margin-top: 48px;
 }
 
 #preview .contents1 img{
@@ -270,7 +296,167 @@ pre {
   white-space: pre-wrap;
   border: none;
 }
+
+.search-item-height{
+  width:100%; 
+  height: 85vh;
+}
+
+/* ハンバーガーメニュー */
+@media (max-width: 670px) {
+  .hamburger-menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+
+  .menu-trigger {
+    display: inline-block;
+    position: relative;
+    width: 36px;
+    height: 28px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .menu-trigger span {
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    transition: all .5s .2s;
+  }
+  .menu-trigger.active span {
+    background-color: #fff;
+  }
+  .menu-trigger span:nth-of-type(1) {
+    top: 0;
+  }
+  .menu-trigger.active span:nth-of-type(1) {
+    transform: translateY(12px) rotate(-45deg);
+  }
+  .menu-trigger span:nth-of-type(2) {
+    top: 12px;
+  }
+  .menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .menu-trigger span:nth-of-type(3) {
+    bottom: 0;
+  }
+  .menu-trigger.active span:nth-of-type(3) {
+    transform: translateY(-12px) rotate(45deg);
+  }
+
+  .hamburger-nav {
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding-bottom: 60px;
+  }
+
+  /* スマホサイズの色調整 */
+  .item-sample p, .btn, .template a{
+    color: #fff;
+  }
+
+  .form-control-dark, .form-bg {
+    background-color: #fff;
+  }
+
+/* スクロールの調整 */
+  .search-item-height {
+    height: 40vh;
+  }
+
+/* 　previewの調整 */
+  #preview h1{
+    font-size: 25px;
+    margin-top: 10px;
+  }
+
+  .contents3 img{
+    max-width: 140px;
+    max-height: 106px;
+  }
+
+  .contents3 p{
+    font-size: 17px;
+  }
+
+  .contents3 ol {
+    font-size: 10px;
+    padding: 0 0 0 20px;
+  }
+
+  #preview .contents3 .position-top-right {
+    font-size: 12px;
+  }
+
+  #preview .contents2 img{
+    max-width: 170px;
+    max-height: 128px;
+  }
+
+  #preview .contents2 p{
+    font-size: 19px;
+  }
+
+  #preview .contents2 .position-top-right {
+    font-size: 12px;
+  }
+
+  #preview .contents2 ol{
+    font-size: 10px;  
+  }
+
+  #preview .contents2 ol {
+    padding-left: 40px;
+  }
+
+  #preview .contents1 img{
+    max-width: 250px;
+    max-height: 300px;
+  }
+
+  #preview .contents1 p{
+    font-size: 22px;
+  }
+
+  #preview .contents1 ol{
+    font-size: 1.06em;
+  }
+
+  #preview .contents1 ol {
+    padding-left: 30px;
+  }
+
+  #preview .contents1 .position-top-right {
+    font-size: 14px;
+  }
   
+  #preview .contents1 {
+    margin-top: 35px;
+  }
+}
 
   @media print{   
     .noprint {
@@ -326,7 +512,7 @@ pre {
       padding-bottom: 0px;
     }
     .print-preview .contents2 ol{
-      font-size: 41px; 
+      font-size: 38px; 
       padding-left: 80px;
     }
 

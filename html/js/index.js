@@ -40,7 +40,7 @@ $(function(){
     getAllData($(this).val(), offset);
   });
   
-  //view moreの追加
+  // view moreの追加
   $('.view_more').click(function(){
     console.log($(".item-sample").length)
     offset = $(".item-sample").length;
@@ -55,6 +55,7 @@ $(function(){
     getTemplateData(templateSearch);
   });
 
+  
   
   //ajax
   function getAllData(search_word, offset){
@@ -94,9 +95,9 @@ $(function(){
           }else if(contentsCount === 2){
             item.addClass("contents2");
             //item.find(".position-top-right").css({"top": "20px","font-size":"17px"});
-            item.find(".item-img").addClass("mt-3");
+            // item.find(".item-img").addClass("mt-3");
           }else if(contentsCount === 1){
-            item.addClass("contents1 mt-5");
+            item.addClass("contents1");
             item.find(".position-top-right").css({"top": "30px","font-size":"17px"});
             item.find(".item-img").addClass("mt-3");
           }
@@ -149,7 +150,7 @@ $(function(){
             item.find(".position-top-right").css({"top": "20px","font-size":"17px"});
             item.find(".item-img").addClass("mt-3");
           }else if(contentsCount === 1){
-            item.addClass("contents1 mt-5");
+            item.addClass("contents1");
             item.find(".position-top-right").css({"top": "30px","font-size":"17px"});
             item.find(".item-img").addClass("mt-3");
           }

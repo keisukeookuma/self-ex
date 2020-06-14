@@ -87,7 +87,7 @@
                         <div class="overflow-auto search-item-height">
                         <!-- <div class="overflow-auto" style="width:100%; height: 620px;"> -->
                             <ul id="all_show_result" class="d-flex flex-wrap justify-content-around"></ul>
-                            <div class="view_more text-center mb-1"><button class='btn'>もっと見る</button></div>
+                            <div class="view_more text-center"><button class='btn'>もっと見る</button></div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-sample1" role="tabpanel" aria-labelledby="v-pills-sample1-tab">
@@ -131,7 +131,7 @@
         <main role="main" class="col-md-7 ml-sm-auto pt-2 px-0 ">
             <div class="overflow-auto" style="width:100%; height: 91vh;">
             <!-- <div class="overflow-auto" style="width:100%; height: 662vh;"> -->
-                <div class="container a">
+                <div class="container responsive-mb">
                     <div class="tab-content p-3 d-flex justify-content-center">
                         <div id="preview" class="tab-pane fade show active m-0">
                             <h1 class="text-center" contentEditable="true">リハビリメニュー</h1>
@@ -143,9 +143,7 @@
     </div>
     <div class="hamburger-menu">
         <div class="menu-trigger" href="#">
-          <span></span>
-          <span></span>
-          <span></span>
+          <p>自主トレ選択</p>
         </div>
     </div>
 </div>
@@ -164,10 +162,11 @@
         if($(this).hasClass('active')){
           $(this).removeClass('active');
           $('.hamburger-nav').slideUp();
-        //   $('.hamburger-item-choice').slideUp();
+          $(this).html('<p>自主トレを選択</p>')
         } else {
           $(this).addClass('active');
           $('.hamburger-nav').slideDown();
+          $(this).html('<p>閉じる</p>')
         //   $('.hamburger-item-choice').slideDown();
         }
     });

@@ -306,7 +306,7 @@ pre {
 @media (max-width: 670px) {
   .hamburger-menu {
     width: 100%;
-    /* display: flex; */
+    display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
@@ -321,7 +321,7 @@ pre {
 
   .menu-trigger {
     display: inline-block;
-    /* position: relative; */
+    position: relative;
     width: 36px;
     height: 28px;
     vertical-align: middle;
@@ -383,9 +383,9 @@ pre {
   }
 
 /* スクロールの調整 */
-  /* .search-item-height {
-     height: 40vh; 
-  } */
+  .search-item-height {
+     height: 45vh; 
+  }
 
 /* 　previewの調整 */
   #preview h1{

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-<nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow navbar-expand">
+<nav class="navbar  navbar-dark fixed-top flex-md-nowrap p-0 shadow navbar-expand">
   <div class="col-2 col-md-5 navbar-brand">
     <a class="mr-0 " href="top.php">Reha Menu</a>
   </div>
@@ -22,15 +22,15 @@
                 <li><a id="choice-contents-3" class="nav-link active" data-toggle="pill" href="#" role="tab">3</a></li>
             </ul>
         </li>
-        <!-- <li>
-            <a class="nav-link ml-3 text-nowrap" href="#">ダウンロード</a>
-        </li> -->
+        <li>
+            <a class="downloadBtn nav-link ml-3" href="#">ダウンロード</a>
+        </li>
         <li>
             <a class="nav-link ml-3" href="#" id="print">印刷</a>
         </li>
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="#">サインアウト</a>
-        </li> -->
+        <li class="nav-item">
+            <a class="nav-link" href="#">ログイン</a>
+        </li>
     </ul>
   </div>
 </nav>
@@ -141,57 +141,36 @@
             </div>
         </main>
     </div>
-    <div class="hamburger-menu">
+    <div class="hamburger-menu d-md-none">
         <div class="menu-trigger" href="#">
           <p>自主トレ選択</p>
         </div>
     </div>
 </div>
 <div class="print-preview"></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script>
-  window.jQuery || document.write('<script src="./js/jquery-3.5.0.min.js"><\/script>')
+  window.jQuery || document.write('<script src="./js/jquery-3.5.1.min.js"><\/script>')
 </script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
 <script src=js/index_function.js></script>
 <script src="js/index.js"></script>
+<script src='js/index_responsive.js'></script>
+<script src='html2canvas.min.js'></script>
+<script src='js/html2canvas.min.js'></script>
 <script>
-    $('.menu-trigger').on('click',function(){
-        if($(this).hasClass('active')){
-          $(this).removeClass('active');
-          $('.hamburger-nav').slideUp();
-          $(this).html('<p>自主トレを選択</p>')
-        } else {
-          $(this).addClass('active');
-          $('.hamburger-nav').slideDown();
-          $(this).html('<p>閉じる</p>')
-        //   $('.hamburger-item-choice').slideDown();
-        }
-    });
-
-    $(function(){
-        var x = $(window).width();
-        var y = 640;
-        if (x > y) {
-            $('.hamburger-nav').addClass('row');
-            $('.search-form').addClass('form-control-dark').addClass('text-light');
-        }
-    });
-
-    $(window).resize(function(){
-        //windowの幅をxに代入
-        var x = $(window).width();
-        //windowの分岐幅をyに代入
-        var y = 640;
-        if (x > y) {
-            $('.hamburger-nav').addClass('row');
-            $('.search-form').addClass('form-control-dark').addClass('text-light');
-        }else{
-            $('.hamburger-nav').removeClass('row');
-            $('.search-form').addClass('form-control-dark').addClass('text-light');
-        }
+    $(".downloadBtn").click(function(){
+        $('.preview-btn').addClass('d-none');
+        html2canvas(document.querySelector("#preview"),{scale:3}).then(canvas => {
+            // document.body.appendChild(canvas)
+            let downloadEle = document.createElement("a");
+            downloadEle.href = canvas.toDataURL("image/png");
+            downloadEle.download = "reha-menu.png";
+            downloadEle.click();
+        });
+        $('.preview-btn').removeClass('d-none')
     });
 </script>
 </body>

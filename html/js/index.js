@@ -42,7 +42,6 @@ $(function(){
   
   // view moreの追加
   $('.view_more').click(function(){
-    console.log($(".item-sample").length)
     offset = $(".item-sample").length;
     var searchWord = $('.search-form').val();
     getAllData(searchWord, offset);
@@ -89,9 +88,9 @@ $(function(){
           if(contentsCount === 3){
             item.find("div.contents3-d-flex").addClass("d-flex");
             item.addClass("contents3");
-            item.find(".item-img").addClass("col-7");
+            item.find(".item-img").addClass("col-6");
             // $("#preview").find("img").css({"width":"226px","height":"170px"})
-            item.find(".item-caption").addClass("col-5");
+            item.find(".item-caption").addClass("col-6");
           }else if(contentsCount === 2){
             item.addClass("contents2");
             //item.find(".position-top-right").css({"top": "20px","font-size":"17px"});

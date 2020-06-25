@@ -18,7 +18,7 @@ function navSampleList(data_item_name, data_img, data_caption){
 function makeItemName(itemSample){
     var sampleItemName = $('<div>');
     sampleItemName.addClass('item_name text-center');
-    sampleItemName.append("<p class='position-top-right' contentEditable='true'>　回　セット</p>");
+    sampleItemName.append("<p class='position-top-right' contentEditable='true'>回数：　　回</p>");
     sampleItemName.append(itemSample);
     return sampleItemName;
 }

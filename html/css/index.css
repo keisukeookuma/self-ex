@@ -185,9 +185,10 @@ body {
 }
 
 .item {
- position: relative;
  padding-top: 5px;
+ position: relative;
 }
+
 
 .template {
   list-style: none;
@@ -288,7 +289,7 @@ body {
 }
 
 #preview .preview-caption {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 pre {
@@ -498,7 +499,7 @@ pre {
       padding-bottom: 0px;
     }
     .print-preview .contents3 ol{
-      font-size: 38px; 
+      font-size: 34px; 
       padding-left: 80px;
     }
 
@@ -574,17 +575,7 @@ pre {
       height: 430mm!important;
       padding: 0mm 10mm!important;
     }
-
-    /* safari用に検討するもchromeで右側にスペースができるため保留 */
-    /* _:lang(x)::-webkit-,.print-preview{
-      display: block;
-      background-size: cover;
-      width: 290mm!important;
-      height: 440mm!important;
-      padding: 0mm 10mm!important;
-    } */
-
-    
+  
     _:-ms-lang(x),.print-preview h1{
       font-size: 70px!important;
       padding: 0px!important;

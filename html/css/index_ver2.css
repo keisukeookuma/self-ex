@@ -1,0 +1,9 @@
+body {
+    font-size: .875rem;
+    -webkit-print-color-adjust: exact;
+}
+
+nav {
+    background-color: #346cb0;
+    height: 50px;
+}

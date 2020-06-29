@@ -212,17 +212,26 @@ body {
   color: gray;
 }
 
+/* .preview-margin {
+  background-color: white;
+  height: 715px;
+  width: 525px;
+  min-width: 525px;
+  padding: 1.5rem;
+  box-shadow: 0 0 8px gray;
+} */
+
 #preview {
   /* background-image: url(../img/back.jpg); */
   background-size: contain;
   background-color: white;
-  color: black;
   height: 715px;
   width: 525px;
   min-width: 525px;
+  color: black;
   box-shadow: 0 0 8px gray;
   font-size: 20px;
-  padding: 1.5rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 /* スマホとタブレットは同じサイズ */
@@ -289,7 +298,12 @@ body {
 }
 
 #preview .preview-caption {
-  font-size: 13px;
+  font-size: 14px;
+}
+
+.preview-scroll-size {
+  width:100%; 
+  height: 91vh;
 }
 
 pre {

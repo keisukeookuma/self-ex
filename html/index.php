@@ -129,12 +129,14 @@
             </div>
         </div>
         <main role="main" class="col-md-7 ml-sm-auto pt-2 px-0 ">
-            <div class="overflow-auto" style="width:100%; height: 91vh;">
+            <div class="preview-scroll ">
             <!-- <div class="overflow-auto" style="width:100%; height: 662vh;"> -->
                 <div class="container responsive-mb">
                     <div class="tab-content p-3 d-flex justify-content-center">
-                        <div id="preview" class="tab-pane fade show active m-0">
-                            <h1 class="text-center" contentEditable="true">リハビリメニュー</h1>
+                        <div class="preview-margin">
+                            <div id="preview" class="tab-pane fade show active m-0">
+                                <h1 class="text-center" contentEditable="true">リハビリメニュー</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,8 +149,9 @@
         </div>
     </div>
 </div>
-<div class="print-preview"></div>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<div class="print-preview">
+    <img src="" alt="" id="canvas-image">
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script>
   window.jQuery || document.write('<script src="./js/jquery-3.5.1.min.js"><\/script>')
@@ -158,20 +161,81 @@
 <script src=js/index_function.js></script>
 <script src="js/index.js"></script>
 <script src='js/index_responsive.js'></script>
-<script src='html2canvas.min.js'></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src='js/html2canvas.min.js'></script>
 <script>
+    var mq = window.matchMedia( "(min-width: 670px)" );
+    if (mq.matches) {
+        $('.preview-scroll').addClass('overflow-auto preview-scroll-size');
+    } else {
+        $('.preview-scroll').removeClass('overflow-auto preview-scroll-size');
+    }
+    
+    function scrollToTop() {
+        scrollTo(0, 0);
+    }
+
+    var scale = 'scale(1)';
     $(".downloadBtn").click(function(){
+        document.body.style.webkitTransform =  scale;
+        scrollToTop();
         $('.preview-btn').addClass('d-none');
-        html2canvas(document.querySelector("#preview"),{scale:3}).then(canvas => {
-            // document.body.appendChild(canvas)
-            let downloadEle = document.createElement("a");
-            downloadEle.href = canvas.toDataURL("image/png");
-            downloadEle.download = "reha-menu.png";
-            downloadEle.click();
+        html2canvas(document.querySelector("#preview"),{scale:4}).then(function(canvas){
+            document.body.appendChild(canvas);
+            // $(canvas).css({'margin-left:300'});
+            if(canvas.msToBlob){
+                alert('Internet Explorerではダウンロード機能を対応しておりません。')
+                // var blob = canvas.msToBlob();
+                // window.navigator.msSaveOrOpenBlob(blob, 'reha-menu.png');
+            }else{
+                let downloadEle = document.createElement("a");
+                downloadEle.href = canvas.toDataURL("image/png");
+                downloadEle.download = "reha-menu.png";
+                downloadEle.click();
+            }
         });
         $('.preview-btn').removeClass('d-none')
     });
+
+    $("#print").click(function(print){
+        $('.preview-btn').addClass('d-none');
+        var hide_elm = $('.header,.footer,.sidebar');
+        hide_elm.addClass('print');
+        html2canvas(document.querySelector("#preview"),{scale:4}).then(function(canvas){
+            var imageData = canvas.toDataURL();
+            $('.print-preview')
+                .html("<img id='Image' src=" + imageData + " style='width:100%;'></img>")
+        });
+        setTimeout(function() {
+            window.print();
+        }, 150);
+        $('.print-preview').children().remove();
+        $('.preview-btn').removeClass('d-none');
+    });
+
+    // $("#print").click(function(print){
+    //     $('.preview-btn').addClass('d-none');
+    //     let hide_elm = $('.header,.footer,.sidebar');
+    //     hide_elm.addClass('print');
+    //     var s = function imageData(callback){
+    //         html2canvas(document.querySelector("#preview"),{scale:4}).then(canvas => {
+    //             let imageData = canvas.toDataURL();
+    //             $('.print-preview')
+    //                 .html("<img id='Image' src=" + imageData + " style='width:100%;'></img>")
+    //         });
+    //         callback();
+    //     }
+    //     var print = function(){
+    //         window.print();
+    //     }
+
+    //     s(print);
+    //     // setTimeout(function() {
+    //     //     window.print();
+    //     // }, 3000);
+    //     $('.print-preview').children().remove();
+    //     $('.preview-btn').removeClass('d-none')
+    // });
 </script>
 </body>
 </html>

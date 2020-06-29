@@ -85,7 +85,6 @@
                             <input class="search-form form-control form-bg" type="text" placeholder="部位や病名で検索可能！" aria-label="検索">
                         </div>
                         <div class="overflow-auto search-item-height">
-                        <!-- <div class="overflow-auto" style="width:100%; height: 620px;"> -->
                             <ul id="all_show_result" class="d-flex flex-wrap justify-content-around"></ul>
                             <div class="view_more text-center"><button class='btn'>もっと見る</button></div>
                         </div>
@@ -175,18 +174,17 @@
         scrollTo(0, 0);
     }
 
-    var scale = 'scale(1)';
+    // var scale = 'scale(1)';
     $(".downloadBtn").click(function(){
-        document.body.style.webkitTransform =  scale;
+        // document.body.style.webkitTransform =  scale;
         scrollToTop();
         $('.preview-btn').addClass('d-none');
         html2canvas(document.querySelector("#preview"),{scale:4}).then(function(canvas){
-            document.body.appendChild(canvas);
-            // $(canvas).css({'margin-left:300'});
+            $('.preview-print').append(canvas);
             if(canvas.msToBlob){
-                alert('Internet Explorerではダウンロード機能を対応しておりません。')
-                // var blob = canvas.msToBlob();
-                // window.navigator.msSaveOrOpenBlob(blob, 'reha-menu.png');
+                // alert('Internet Explorerではダウンロードは行なえません')
+                var blob = canvas.msToBlob();
+                window.navigator.msSaveOrOpenBlob(blob, 'reha-menu.png');
             }else{
                 let downloadEle = document.createElement("a");
                 downloadEle.href = canvas.toDataURL("image/png");
@@ -194,6 +192,7 @@
                 downloadEle.click();
             }
         });
+        $('canvas').remove();
         $('.preview-btn').removeClass('d-none')
     });
 
@@ -212,30 +211,6 @@
         $('.print-preview').children().remove();
         $('.preview-btn').removeClass('d-none');
     });
-
-    // $("#print").click(function(print){
-    //     $('.preview-btn').addClass('d-none');
-    //     let hide_elm = $('.header,.footer,.sidebar');
-    //     hide_elm.addClass('print');
-    //     var s = function imageData(callback){
-    //         html2canvas(document.querySelector("#preview"),{scale:4}).then(canvas => {
-    //             let imageData = canvas.toDataURL();
-    //             $('.print-preview')
-    //                 .html("<img id='Image' src=" + imageData + " style='width:100%;'></img>")
-    //         });
-    //         callback();
-    //     }
-    //     var print = function(){
-    //         window.print();
-    //     }
-
-    //     s(print);
-    //     // setTimeout(function() {
-    //     //     window.print();
-    //     // }, 3000);
-    //     $('.print-preview').children().remove();
-    //     $('.preview-btn').removeClass('d-none')
-    // });
 </script>
 </body>
 </html>

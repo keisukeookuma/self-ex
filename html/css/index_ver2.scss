@@ -42,11 +42,6 @@ header {
     a{
       color: #fff;
     }
-
-    @media(max-width:($sp)){
-      background-color: transparent;
-      box-shadow: none;
-    }
   }
 }
 
@@ -155,13 +150,6 @@ main {
     font-size: 20px;
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 
-    @media (max-width:($tab)){
-        height: 492px;
-        width: 352px;
-        min-width: 352px;
-        padding: 0.25rem;
-    }
-
     .position-top-right {
       position: absolute;
       right: 0;
@@ -231,15 +219,23 @@ main {
   color: black;
 }
 
-/* 追加 */
-// 7/2ここまで
+// タブレットレイアウト
+@media (max-width: 1024px) {
+  main #preview {
+    height: 492px;
+    width: 352px;
+    min-width: 352px;
+    padding: 0.25rem;
+  }
+}
 
 /* スマホレイアウト */
 @media (max-width: ($sp)) {
   
-  // html, css{
-  //   touch-action:none;
-  // }
+  header .navbar-brand {
+    background-color: transparent;
+    box-shadow: none;
+  }
 
   .hamburger-nav {
     width: 100%;
@@ -421,7 +417,7 @@ main {
     }
   }
 }
-//IEのプリント編集　なぜ回数がうえにあるか
+//IEのプリント編集
 @media print{   
   .noprint {
     display: none;

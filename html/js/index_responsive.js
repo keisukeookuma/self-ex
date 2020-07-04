@@ -33,3 +33,11 @@ $(window).resize(function(){
         $('.search-form').addClass('form-control-dark').addClass('text-light');
     }
 });
+
+// mainのスクロールをスマホでは表示なしにする
+var mq = window.matchMedia( "(min-width: 670px)" );
+if (mq.matches) {
+    $('.preview-scroll').addClass('overflow-auto preview-scroll-size');
+} else {
+    $('.preview-scroll').removeClass('overflow-auto preview-scroll-size');
+}

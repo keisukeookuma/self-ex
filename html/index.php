@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>リハビリメニュー作成！</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index_ver2.css">
 </head>
 <body>
-<nav class="navbar  navbar-dark fixed-top flex-md-nowrap p-0 shadow navbar-expand">
+<header class="navbar  navbar-dark fixed-top flex-md-nowrap p-0 shadow navbar-expand">
   <div class="col-2 col-md-5 navbar-brand">
     <a class="mr-0 " href="top.php">Reha Menu</a>
   </div>
@@ -33,11 +33,11 @@
         </li>
     </ul>
   </div>
-</nav>
+</header>
 <div class="container-fluid noprint">
     <div class="row pt-5">
-        <div class="hamburger-nav col-md-5">
-            <nav-side class="col-md-3 d-md-block pt-2 px-0">
+        <nav class="hamburger-nav col-md-5">
+            <div class="nav-side col-md-3 d-md-block pt-2 px-0">
                 <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link active nav-a-size px-0 text-center m-auto" data-toggle="pill" href="#v-pills-original" role="tab" aria-controls="v-pills-original" aria-selected="true">
                         <svg class="bi bi-plus-square" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +77,7 @@
                         <p>使い方ガイド</p>
                     </a>
                 </div>
-            </nav-side>
+            </div>
             <div class="hamburger-item-choice col-md-9 d-md-block pt-2 px-4 overflow-auto">
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-original" role="tabpanel" aria-labelledby="v-pills-original-tab">
@@ -90,9 +90,6 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="v-pills-sample1" role="tabpanel" aria-labelledby="v-pills-sample1-tab">
-                        <!-- <div class="search mx-auto">
-                            <input class="form-control form-control-dark  text-light bg-dark" type="text" placeholder="部位や病名で検索可能！" aria-label="検索">
-                        </div> -->
                         <ul id="template_list" class="px-0 pt-3">
                             <li class="nav-item template">
                                 <a class="nav-link" href="#">腰椎椎間板ヘルニア</a>
@@ -126,16 +123,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
         <main role="main" class="col-md-7 ml-sm-auto pt-2 px-0 ">
             <div class="preview-scroll ">
-            <!-- <div class="overflow-auto" style="width:100%; height: 662vh;"> -->
                 <div class="container responsive-mb">
                     <div class="tab-content p-3 d-flex justify-content-center">
-                        <div class="preview-margin">
-                            <div id="preview" class="tab-pane fade show active m-0">
-                                <h1 class="text-center" contentEditable="true">リハビリメニュー</h1>
-                            </div>
+                        <div id="preview" class="tab-pane fade show active m-0">
+                            <h1 class="text-center" contentEditable="true">リハビリメニュー</h1>
                         </div>
                     </div>
                 </div>
@@ -160,9 +154,9 @@
 <script src=js/index_function.js></script>
 <script src="js/index.js"></script>
 <script src='js/index_responsive.js'></script>
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 <script src='js/html2canvas.min.js'></script>
 <script>
+    // mainのスクロールをスマホでは表示なしにする
     var mq = window.matchMedia( "(min-width: 670px)" );
     if (mq.matches) {
         $('.preview-scroll').addClass('overflow-auto preview-scroll-size');
@@ -170,46 +164,70 @@
         $('.preview-scroll').removeClass('overflow-auto preview-scroll-size');
     }
     
+    //ブラウザの判別
+    var userAgent = window.navigator.userAgent.toLowerCase();
+
     function scrollToTop() {
         scrollTo(0, 0);
     }
 
-    // var scale = 'scale(1)';
+    function IePrint(){
+        var hide_elm = $('.header,.footer,.sidebar');
+        hide_elm.addClass('print');
+        $('.print-preview').append($('#preview').html());
+        window.print();
+
+        if(contentsCount === 3){
+            $('div.item').addClass('contents3');
+            hide_elm.removeClass('print');
+        }else if(contentsCount === 2){
+            $('div.item').addClass('contents2');
+            hide_elm.removeClass('print');
+        }else if(contentsCount === 1){
+            $('div.item').addClass('contents1');
+            hide_elm.removeClass('print');
+        }
+        // $('.print-preview').children().remove();
+    };
+
+
     $(".downloadBtn").click(function(){
-        // document.body.style.webkitTransform =  scale;
-        scrollToTop();
-        $('.preview-btn').addClass('d-none');
-        html2canvas(document.querySelector("#preview"),{scale:4}).then(function(canvas){
-            $('.preview-print').append(canvas);
-            if(canvas.msToBlob){
-                // alert('Internet Explorerではダウンロードは行なえません')
-                var blob = canvas.msToBlob();
-                window.navigator.msSaveOrOpenBlob(blob, 'reha-menu.png');
-            }else{
-                let downloadEle = document.createElement("a");
-                downloadEle.href = canvas.toDataURL("image/png");
-                downloadEle.download = "reha-menu.png";
-                downloadEle.click();
-            }
-        });
-        $('canvas').remove();
-        $('.preview-btn').removeClass('d-none')
+        if(userAgent.match(/(msie|MSIE)/) || userAgent.match(/(T|t)rident/)){
+            alert('Internet Explorerではダウンロードは行なえません')
+        }else{
+            scrollToTop();
+            $('.item-delete-btn').addClass('d-none');
+            html2canvas(document.querySelector("#preview"),{scale:4}).then(function(canvas){
+                $('.preview-print').append(canvas);
+                
+                    let downloadEle = document.createElement("a");
+                    downloadEle.href = canvas.toDataURL("image/png");
+                    downloadEle.download = "reha-menu.png";
+                    downloadEle.click();
+            });
+            $('canvas').remove();
+            $('.item-delete-btn').removeClass('d-none')
+        }
     });
 
     $("#print").click(function(print){
-        $('.preview-btn').addClass('d-none');
-        var hide_elm = $('.header,.footer,.sidebar');
-        hide_elm.addClass('print');
-        html2canvas(document.querySelector("#preview"),{scale:4}).then(function(canvas){
-            var imageData = canvas.toDataURL();
-            $('.print-preview')
-                .html("<img id='Image' src=" + imageData + " style='width:100%;'></img>")
-        });
-        setTimeout(function() {
-            window.print();
-        }, 150);
-        $('.print-preview').children().remove();
-        $('.preview-btn').removeClass('d-none');
+        if(userAgent.match(/(msie|MSIE)/) || userAgent.match(/(T|t)rident/)){
+            IePrint()
+        }else{
+            $('.item-delete-btn').addClass('d-none');
+            var hide_elm = $('.header,.footer');
+            hide_elm.addClass('print');
+            html2canvas(document.querySelector("#preview"),{scale:4}).then(function(canvas){
+                var imageData = canvas.toDataURL();
+                $('.print-preview')
+                    .html("<img id='Image' src=" + imageData + " style='width:100%;'></img>")
+            });
+            setTimeout(function() {
+                window.print();
+            }, 150);
+            $('.print-preview').children().remove();
+            $('.item-delete-btn').removeClass('d-none');
+        }
     });
 </script>
 </body>
